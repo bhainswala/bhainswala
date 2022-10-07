@@ -1,0 +1,49 @@
+.head-margin{
+    margin: 24px;
+}
+.head{
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 49px;
+    text-align: left;
+    color: #1BBF5D;
+
+}
+.head-schema{
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 27px;
+    display: flex;
+    align-items: center;
+    
+    color: #888888;
+}
+.chat-button{
+    background: #27A3F0;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.17);
+    border-radius: 16px;
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    color: #FFFFFF;
+    padding: 8px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    text-align: center;
+    margin: 12px;
+    margin-right: 0;
+}
+.row-no-margin {
+    margin-left: 0px;
+    margin-right: 0px;
+ } 
+ .m-top-p-right{
+    margin-top: 12px;
+    padding-right: 0;
+ }

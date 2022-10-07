@@ -1,0 +1,125 @@
+<div class="container-fluid">
+    <div class=" row diary-tab">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 ">
+            <div [ngClass]="type=='TB' ? 'active':'tab-name'" (click)="buffeloType('TB')">ताज़ा ब्याइ </div>
+
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 ">
+            <div [ngClass]="type=='BA' ? 'active':'tab-name'"  (click)="buffeloType('BA')">बाखड़ी</div>
+        </div>
+    </div>
+    <div *ngFor="let dairy_data of dairyList ;let i=index">
+        <div class="dairy-card" >
+            <div class="row">
+                <div class="col-4 col-xs-4 col-sm-4">
+                    <div class="owner-card">
+                        <a [routerLink]="['/diary',dairy_data.id]">
+                            <img  [defaultImage]="defaultImage" [lazyLoad]="dairy_data.image_link"  [useSrcset]="true" >
+                        </a>
+    
+                    </div>
+                </div>
+                <div class="col-8 col-xs-8 col-sm-8 info">
+                    <a [routerLink]="['/diary',dairy_data.id]">
+                        <div class="name">{{dairy_data.name}} </div>
+                        <div class="city">{{dairy_data.user_city }},{{dairy_data.user_state}}</div>
+                        <div class="city"> पशुओं की संख्या: <b>{{dairy_data.cattle_count}}</b></div>
+                    </a>
+                </div>
+            </div>
+            <div class=" row justify-content-center icons g-0">
+                <div class="col-3">
+                    <div href="tel:8521971929"><img src="../../../assets/icons/phone-call.svg"></div>
+                </div>
+                <div class="col-3">
+                    <div><img src="../../../assets/icons/whats-app.svg"></div>
+                </div>
+                <div class="col-3">
+                    <div><img src="../../../assets/icons/loc.svg"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row" *ngIf="i==0">
+            <div class="col-12 col-xs-12 col-sm-12">
+                <div class="video_image">
+                    <div class="text-msg">
+                        खुश ग्रांहकों <br><span>की ज़ुबान से</span>
+    
+                    </div>
+                   <video width="100%"  controls>
+                    <source src="https://s3-ap-south-1.amazonaws.com/filestorage-bw/dairy_video__1"  type="video/mp4">
+                  </video>
+    
+                </div>
+    
+                <!-- <div class="video_image">
+    
+                    <img src="../../../assets/icons/background.png">
+                    <div class="video_logo">
+                        <div class="logo"></div>
+                    </div>
+                    <div class="text-msg">
+                        खुश ग्रांहकों <br><span>की ज़ुबान से</span>
+    
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- <div class="row">
+        <div class="col-12 col-xs-12 col-sm-12">
+            <div class="video_image">
+                <div class="text-msg">
+                    खुश ग्रांहकों <br><span>की ज़ुबान से</span>
+
+                </div>
+               <video width="100%"  controls>
+                <source src="https://s3-ap-south-1.amazonaws.com/filestorage-bw/dairy_video__1"  type="video/mp4">
+              </video>
+
+            </div>
+
+            <!-- <div class="video_image">
+
+                <img src="../../../assets/icons/background.png">
+                <div class="video_logo">
+                    <div class="logo"></div>
+                </div>
+                <div class="text-msg">
+                    खुश ग्रांहकों <br><span>की ज़ुबान से</span>
+
+                </div>
+            </div> --
+        </div>
+    </div> -->
+    <!-- <div class="dairy-card" *ngFor="let dairy_data of dairyList ;let i=index">
+        <div class="row">
+            <div class="col-4 col-xs-4 col-sm-4">
+
+                <div class="owner-card">
+                    <a [routerLink]="['/diary',dairy_data.id]">
+                        <img src="{{dairy_data.image_link}}">
+                    </a>
+                </div>
+            </div>
+            <div class="col-8 col-xs-8 col-sm-8 info">
+                <a [routerLink]="['/diary',dairy_data.id]">
+                    <div class="name">{{dairy_data.name}} </div>
+                    <div class="city">{{dairy_data.user_city }},{{dairy_data.user_state}}</div>
+                    <div class="city"> पशुओं की संख्या: <b>{{dairy_data.cattle_count}}</b></div>
+                </a>
+            </div>
+        </div>
+        <div class=" row justify-content-center icons">
+            <div class=" no-gutters col-3">
+                <div><img src="../../../assets/icons/phone-call.svg"></div>
+            </div>
+            <div class=" no-gutters col-3">
+                <div><img src="../../../assets/icons/whats-app.svg"></div>
+            </div>
+            <div class=" no-gutters col-3">
+                <div><img src="../../../assets/icons/loc.svg"></div>
+            </div>
+        </div>
+    </div> -->
+</div>

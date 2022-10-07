@@ -1,0 +1,93 @@
+<div class="container-fluid">
+    <div class="cattle-card-main" *ngFor="let cattle  of cattleList">
+        <div class="cattle-card">
+            <div class="row g-0">
+                <div class="col-12 col-xs-12 col-sm-12 check">
+                    <img src="../../../../assets/icons/verified.svg">
+                    <span>अधिकारी द्वारा जाँची गई</span>
+                    
+                </div>
+                <div class="col-4 col-xs-4 col-sm-4 ">
+                    <div class="img-card">
+                        <div  id="img1" ><img  [defaultImage]="defaultImage" [lazyLoad]="cattle.image1_link"  [useSrcset]="true"></div>
+                        <div id="img2"><img [defaultImage]="defaultImage" [lazyLoad]="cattle.image2_link"  [useSrcset]="true"></div>
+                        <!-- <div><img src="../../../assets/img/dairy.jpg"></div>
+                        <div><img src="../../../assets/img/dairy.jpg"></div> -->
+                    </div>
+                    <!-- <div class="img-card">
+                        <div><img src="../../../assets/img/dairy.jpg"></div>
+                        <div><img src="../../../assets/img/dairy.jpg"></div>
+                    </div> -->
+                </div>
+                <div class="col-8 col-xs-8 col-sm-8 " (click)="videoClick()">
+                    <div class="video_image" >
+                        <video width="100%" id="video"  controls>
+                            <source src="{{ cattle.cattle_video_link}}"   type="video/mp4">
+                          </video>
+                          <div class="video_logo" (click)="videoClick()">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row g-0 mt-1">
+                <div class="col-4 col-xs-4 col-sm-4 types ">
+                    <img src="../../../assets/icons/milk_capacity.svg"><span>{{ cattle.milk_qty}} लीटर क्षमता </span>
+
+                </div>
+                <div class="col-4 col-xs-4 col-sm-4 types">
+                    <img src="../../../assets/icons/buff-icon.svg"><span>{{cattle.breed}} भैंस </span>
+                </div>
+                <div class="col-4 col-xs-4 col-sm-4  types">
+                    <img src="../../../assets/icons/price.svg"><span>₹ {{cattle.price}}</span>
+                </div>
+
+            </div>
+            <div class="row g-0 mt-1">
+                <div class="col-4 col-xs-4 col-sm-4 time-temp-zone justify-content-end">
+                    <img src="../../../assets/icons/time.svg"><span>{{cattle.cal_delivery_date}} दिन पहले</span>
+
+                </div>
+                <div class="col-8 col-xs-8 col-sm-8 time-temp-zone justify-content-center">
+                    <img style="width: 15px;" src="../../../assets/icons/temp.svg"><span style="font-weight:bold ;">शरीर का तापमान: {{cattle.temp}} °C </span>
+                </div>
+            </div>
+            <hr>
+            <div class="row g-0 mt-20">
+                <div class="col-2 col-xs-2 col-sm-2">
+                    <div class="age">उम्र</div>
+                    <div class="age-value">{{cattle.age}}</div>
+                </div> |
+                <div class="col-2 col-xs-2 col-sm-2">
+                    <div class="age">ब्यात </div>
+                    <div class="age-value">{{cattle.byat}}</div>
+                </div> |
+                <div class="col-3 col-xs-3 col-sm-3">
+                    <div class="age">लम्बाई</div>
+                    <div class="age-value">{{cattle.length}} cm</div>
+                </div> |
+                <div class="col-3 col-xs-3 col-sm-3">
+                    <div class="age">चौड़ाई</div>
+                    <div class="age-value">{{cattle.width}} cm</div>
+                </div>
+
+            </div>
+        </div>
+        <div class="row justify-content-center m-3">
+            <div class="col-3">
+                <div><img src="../../../assets/icons/phone-call.svg"></div>
+                <div class="icons">कॉल करें </div>
+            </div>
+            <div class="col-3">
+                <div><img src="../../../assets/icons/whats-app.svg"></div>
+                <div class="icons">मैसज करें</div>
+            </div>
+            <div class="col-3">
+                <div><img src="../../../assets/icons/share1.svg"></div>
+                <div class="icons">शेयर करें</div>
+            </div>
+        </div>
+
+
+    </div>
+</div>

@@ -1,0 +1,146 @@
+
+
+.diary-tab{
+    margin: 8px 0;
+    font-size: 16px;
+    font-weight: 600;
+    .tab-name{
+        border-radius: 8px;
+        border: 1px solid #e2e8ef;
+        padding: 6px;
+        margin-right: 4px;
+        background: #fff;;
+        font-family: 'Noto Sans';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 22px;
+        text-align: center;
+        color: #444444;
+    }
+    .active{
+        background: #27A3F0;
+        border-radius: 8px;
+        border: 1px solid #e2e8ef;
+        padding: 6px;
+        margin-right: 4px;
+        font-family: 'Noto Sans';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 22px;
+        text-align: center;
+        color: #fff;
+    }
+
+
+}
+
+.dairy-card{
+    border: 1px solid #e2e8ef;
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 24px;
+    a{
+        text-decoration: none;
+        // width: 100%;
+    }
+}
+.owner-card{
+    border-radius: 120px;
+    width: 112%;
+    height: 120%;
+    img {
+        width: 100%;
+        height: 125%;
+        overflow: hidden;
+        border-radius: 120px;
+    }
+}
+.info{
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+}
+.name{
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #444444;
+    padding-bottom: 2px;
+}
+.city{
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 2px;
+    color: #444444;
+}
+.phone-icon{
+    padding: 8px;
+    border-radius: 81px;
+    border: 1px solid #e2e8ef;
+}
+.icons{
+    margin-left: 72px;
+    img {
+        width: 50%;
+        height: 50%;
+    }
+}
+
+.video_image{
+    overflow: hidden;
+    position: relative;
+}       
+
+
+.video_logo {
+    position: absolute;
+    background: #ffffff;
+    box-shadow: 0px 6px 32px rgba(221, 230, 237, 0.6);
+    width: 38px;
+    height: 38px;
+    left: 42%;
+    top: 20%;
+    border-radius: 20px;
+    padding: 0.7em;
+    padding-left: 0.8em;
+    .logo{
+        width: 16.62px;
+        border-top: 7px solid transparent;
+        border-left: 14px solid #1BBF5D;
+        border-bottom: 7px solid transparent;
+    }
+    :hover{
+        background: #F7F9FE;
+    }
+     } 
+
+
+.text-msg{
+    position: absolute;
+    left: 35%;
+    top: 20%;
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 27px;
+    text-align: center;
+    color: #FFFFFF;
+    span{
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 19px;
+    }
+}   
