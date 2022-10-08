@@ -12,18 +12,17 @@
         <div class="dairy-card" >
             <div class="row">
                 <div class="col-4 col-xs-4 col-sm-4">
-                    <div class="owner-card">
-                        <a [routerLink]="['/diary',dairy_data.id]">
+                    <a [routerLink]="['/diary',dairy_data.id]">
+                        <div class="owner-card">
                             <img  [defaultImage]="defaultImage" [lazyLoad]="dairy_data.image_link"  [useSrcset]="true" >
-                        </a>
-    
-                    </div>
+                        </div>
+                    </a>
                 </div>
                 <div class="col-8 col-xs-8 col-sm-8 info">
                     <a [routerLink]="['/diary',dairy_data.id]">
                         <div class="name">{{dairy_data.name}} </div>
                         <div class="city">{{dairy_data.user_city }},{{dairy_data.user_state}}</div>
-                        <div class="city"> पशुओं की संख्या: <b>{{dairy_data.cattle_count}}</b></div>
+                        <div class="city"> पशुओं की संख्या : <b>{{dairy_data.cattle_count}}</b></div>
                     </a>
                 </div>
             </div>
@@ -32,7 +31,10 @@
                     <a href="{{'tel:' + dairy_data.user_phone_number}}"><img src="../../../assets/icons/phone-call.svg"></a>
                 </div>
                 <div class="col-3">
-                    <div><img src="../../../assets/icons/whats-app.svg"></div>
+                    <!-- <div><img src="../../../assets/icons/whats-app.svg"></div> -->
+                    <div class="whatsapp-dairy">
+                        <jjva-ngx-whatsapp-button [ngx_whatsapp_phone]="dairy_data.user_phone_number" [ngx_whatsapp_text]="title"></jjva-ngx-whatsapp-button>
+                       </div>
                 </div>
                 <div class="col-3">
                     <div><img src="../../../assets/icons/loc.svg"></div>

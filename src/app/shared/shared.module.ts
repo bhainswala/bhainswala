@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderBarComponent } from './components/header-bar/header-bar.component';
 import { BottomBarComponent } from './components/bottom-bar/bottom-bar.component';
+import { NgxWhastappButtonModule } from 'ngx-whatsapp-button';
 
 
 
@@ -11,7 +12,8 @@ import { BottomBarComponent } from './components/bottom-bar/bottom-bar.component
     BottomBarComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    NgxWhastappButtonModule
   ],
   exports:[
     HeaderBarComponent

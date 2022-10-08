@@ -13,7 +13,8 @@ export class DairyComponent implements OnInit {
   firstDairy: any;
   type: any ;
   defaultImage = '../../../assets/img/dairy.jpg';
- 
+  public phone = "918521971829"
+  public title = "Hey User Welcome to Bhainswala";
   constructor(
     private dairyService:DairyService,
     private router:Router
@@ -28,21 +29,18 @@ export class DairyComponent implements OnInit {
       if(res && res['data']){
         this.dairyList = res['data']   
         this.userVideoLink = this.dairyList[0].video_link
-        console.log(this.userVideoLink);
-        
+        this.phoneNumberCode()
       }
     })
     
     
   }
-  videoPlay(video:any){
-    console.log('video',video);
-    
-    if(video.fullscreenElement){
-      console.log('ratnam');
-      
-    }
+  phoneNumberCode(){
+    this.dairyList = this.dairyList.map((each:any)=>{
+      each.user_phone_number = '91'+ each.user_phone_number
+      return each
 
+    })
   }
   buffeloType(type:any){
     if (type=='TB'){

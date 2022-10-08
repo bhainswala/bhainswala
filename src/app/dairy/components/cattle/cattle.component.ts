@@ -16,6 +16,32 @@ export class CattleComponent implements OnInit {
   defaultImage = '../../../assets/img/dairy.jpg';
   video_link = "https://s3-ap-south-1.amazonaws.com/filestorage-bw/dairy_video__1"
 
+  currentIndex: any = -1;
+  showFlag: any = false;
+  public phone = "918521971829"
+  public title = "Hey User Welcome to Bhainswala";
+  imageObject: Array<any> = [{
+      image: '../../../assets/img/dairy.jpg',
+      thumbImage: '../../../assets/img/dairy.jpg',
+      // title: 'Dairy Img 1'
+  }, {
+      image: '../../../assets/img/dairy.jpg',
+      thumbImage: '../../../assets/img/dairy.jpg',
+      // title:'Dairy Img 1'
+  },
+  //  {
+  //     video: 'https://youtu.be/tYa6OLQHrEc',
+  //     posterImage: 'https://img.youtube.com/vi/tYa6OLQHrEc/hqdefault.jpg',
+  //     title: 'Youtube example one with title.'
+  // },
+  // {
+  //     image: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/4.jpg',
+  //     thumbImage: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/4.jpg',
+  //     title: 'Most beautiful birds in the world flying.'
+  // }
+];
+
+
   constructor(
     private diaryService: DairyService,
     private route: ActivatedRoute
@@ -34,6 +60,7 @@ export class CattleComponent implements OnInit {
     this.diaryService.getCattleList(this.dairyId).subscribe((response: any) => {
       if (response && response.data) {
         this.cattleList = response.data
+        this.setImages(response.data)
         this.getDeliveryDate()
       }
     })
@@ -53,6 +80,16 @@ export class CattleComponent implements OnInit {
 
       return each
     })
+
+  }
+  setImages(data:any){
+    data = data.map((each: any) => {
+      this.imageObject[0].image = each.image1_link
+      this.imageObject[0].thumbImage = each.image1_link
+      this.imageObject[1].image = each.image2_link
+      this.imageObject[1].thumbImage = each.image2_link
+    })
+
 
   }
   ngOnDestroy() {
@@ -75,6 +112,15 @@ export class CattleComponent implements OnInit {
     }
     
 
+  }
+  showLightbox(index:any) {
+    this.currentIndex = index;
+    this.showFlag = true;
+  }
+
+  closeEventHandler() {
+    this.showFlag = false;
+    this.currentIndex = -1;
   }
 
 }

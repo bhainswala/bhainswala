@@ -39,7 +39,7 @@
   margin-bottom: 24px;
   a {
     text-decoration: none;
-    // width: 100%;
+    width: 100%;
   }
 }
 .owner-card {
@@ -136,5 +136,25 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 19px;
+  }
+}
+.whatsapp-dairy{
+  position: relative;
+  ::ng-deep {
+      .ngx-whatsapp-button-float{
+          position: absolute !important;
+          width: 32px !important;
+          height: 32px !important;
+          background-color: #25d366 ;
+          top: 0rem;
+          left: 0rem;
+          div{
+              margin-top: -5% !important;
+          }
+      
+      }
+      .fa-2x{
+          font-size: 1.4em;
+      }   
   }
 }

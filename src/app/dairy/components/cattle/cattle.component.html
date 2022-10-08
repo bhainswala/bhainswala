@@ -9,8 +9,9 @@
                 </div>
                 <div class="col-4 col-xs-4 col-sm-4 ">
                     <div class="img-card">
-                        <div  id="img1" ><img  [defaultImage]="defaultImage" [lazyLoad]="cattle.image1_link"  [useSrcset]="true"></div>
-                        <div id="img2"><img [defaultImage]="defaultImage" [lazyLoad]="cattle.image2_link"  [useSrcset]="true"></div>
+                      <div> <img *ngFor="let img of imageObject; let i = index" [defaultImage]="defaultImage" [lazyLoad]="img.thumbImage" (click)="showLightbox(i)" /></div> 
+                        <!-- <div  id="img1" ><img  [defaultImage]="defaultImage" [lazyLoad]="cattle.image1_link"  [useSrcset]="true"></div>
+                        <div id="img2"><img [defaultImage]="defaultImage" [lazyLoad]="cattle.image2_link"  [useSrcset]="true"></div> -->
                         <!-- <div><img src="../../../assets/img/dairy.jpg"></div>
                         <div><img src="../../../assets/img/dairy.jpg"></div> -->
                     </div>
@@ -75,12 +76,15 @@
         </div>
         <div class="row justify-content-center m-3">
             <div class="col-3">
-                <div><img src="../../../assets/icons/phone-call.svg"></div>
+                <div class="pb-1"><img src="../../../assets/icons/phone-call.svg"></div>
                 <div class="icons">कॉल करें </div>
             </div>
             <div class="col-3">
-                <div><img src="../../../assets/icons/whats-app.svg"></div>
-                <div class="icons">मैसज करें</div>
+                <!-- <div><img src="../../../assets/icons/whats-app.svg"></div> -->
+               <div class="whatsapp-cattle">
+                <jjva-ngx-whatsapp-button [ngx_whatsapp_phone]="phone" [ngx_whatsapp_text]="title"></jjva-ngx-whatsapp-button>
+               </div>
+                <div class="whatsapp-msg">मैसज करें</div>
             </div>
             <div class="col-3">
                 <div><img src="../../../assets/icons/share1.svg"></div>
@@ -91,3 +95,8 @@
 
     </div>
 </div>
+<ng-image-fullscreen-view
+        [images]="imageObject"
+        [imageIndex]="currentIndex"
+        [show]="showFlag"
+        (close)="closeEventHandler()"></ng-image-fullscreen-view>
