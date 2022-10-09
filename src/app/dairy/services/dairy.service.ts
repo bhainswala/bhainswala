@@ -26,6 +26,7 @@ export class DairyService {
 
   getCattleList(id:any){
     let params = new HttpParams().set('dairy_id',id);
+    params = params.append("sold_status", "USD");
     return this.http.get(this.baseUrl + '/dairyoperations/cattle/list/',{params:params});
   }
 }
