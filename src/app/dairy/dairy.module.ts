@@ -7,6 +7,8 @@ import { CattleComponent } from './components/cattle/cattle.component';
 import { LazyLoadImageModule ,LAZYLOAD_IMAGE_HOOKS, ScrollHooks } from 'ng-lazyload-image';
 import { NgImageFullscreenViewModule } from 'ng-image-fullscreen-view';
 import { NgxWhastappButtonModule } from 'ngx-whatsapp-button';
+import { ShareIconsModule } from 'ngx-sharebuttons/icons';
+import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,11 @@ import { NgxWhastappButtonModule } from 'ngx-whatsapp-button';
     DairyRoutingModule,
     LazyLoadImageModule,
     NgImageFullscreenViewModule,
-    NgxWhastappButtonModule
+    NgxWhastappButtonModule,
+    ShareButtonsModule.withConfig({
+      debug: true
+    }),
+    ShareIconsModule
     
 
     

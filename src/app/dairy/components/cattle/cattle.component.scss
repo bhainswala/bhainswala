@@ -189,4 +189,21 @@ margin-top: 2rem;
         }   
     }
 }
-
+.share-button{
+    ::ng-deep{
+        button {
+            border: 1px solid black;
+            border-radius: 16px;
+            align-items: center;
+            text-align: center;
+            color: #4c5565;
+            width: 32px !important;
+            height: 32px !important;
+            background: #fff;
+            margin-bottom: 2px;
+            &:focus {
+              outline: none;
+            }
+          }
+    }
+}

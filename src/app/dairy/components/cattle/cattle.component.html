@@ -87,7 +87,20 @@
                 <div class="whatsapp-msg">मैसज करें</div>
             </div>
             <div class="col-3">
-                <div><img src="../../../assets/icons/share1.svg"></div>
+                <!-- <div><img src="../../../assets/icons/share1.svg"></div> -->
+                <div class="share-button">
+                    <!-- <img src="../../../assets/icons/share1.svg"> -->
+                     <share-button 
+                            class="button"
+                            [theme]="'circles-dark'"
+                            [button]="'whatsapp'"
+                            [url]="baseUrl"
+                            [title]="'bhainswala'"
+                            [description]="description"
+                            
+                            ></share-button>
+
+                </div>
                 <div class="icons">शेयर करें</div>
             </div>
         </div>

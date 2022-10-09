@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DairyService } from '../../services/dairy.service';
 
 @Component({
@@ -15,6 +15,8 @@ export class CattleComponent implements OnInit {
   videoDetail: boolean = false;
   defaultImage = '../../../assets/img/dairy.jpg';
   video_link = "https://s3-ap-south-1.amazonaws.com/filestorage-bw/dairy_video__1"
+
+  description='स्वस्थ पशु, सही दाम पे खरीदें/बेचें'
 
   currentIndex: any = -1;
   showFlag: any = false;
@@ -41,10 +43,13 @@ export class CattleComponent implements OnInit {
   // }
 ];
 
+  baseUrl: any;
+
 
   constructor(
     private diaryService: DairyService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router:Router
   ) { }
 
   ngOnInit(): void {
@@ -54,6 +59,7 @@ export class CattleComponent implements OnInit {
       }
     });
     this.getCattleList()
+    this.baseUrl = this.router.url
 
   }
   getCattleList() {
