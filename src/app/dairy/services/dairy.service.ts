@@ -16,15 +16,17 @@ export class DairyService {
   
 
   getDairyList(type?:any){
-    let params
+    let queryParam = new HttpParams();
+    queryParam = queryParam.append("sold_status", "USD");
     if(type){
-      params = new HttpParams().set('cattle_type',type);
+      queryParam = queryParam.append("cattle_type", type);
     }
-    return this.http.get(this.baseUrl + '/dairyoperations/dairy/list/',{params:params});
+    return this.http.get(this.baseUrl + '/dairyoperations/dairy/list/',{params:queryParam});
   }
 
   getCattleList(id:any){
     let params = new HttpParams().set('dairy_id',id);
+    params = params.append("sold_status", "USD");
     return this.http.get(this.baseUrl + '/dairyoperations/cattle/list/',{params:params});
   }
 }
